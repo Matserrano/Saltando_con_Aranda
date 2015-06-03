@@ -167,9 +167,10 @@ package
 				case 4:
 					if (enter != true && !etapa4Completa)
 					{
+						timerMenu = 0;
 						dibujarEtapa4();	
 					}
-					else if (enter)
+					else if (enter && timerMenu >= 125)
 					{
 						etapa = 2;
 					}
@@ -264,7 +265,7 @@ package
 			
 			limpiarEtapa2();
 			
-			presentacion = dibujarRectangulo(0x00ff00, 1,stage.stageWidth /2, stage.stageHeight /2,stage.stageWidth /2, stage.stageHeight /2);
+			dibujarCartel(new Mc_Ganaste,new Mc_Reiniciar);
 			
 			etapa4Completa = true;
 		}
